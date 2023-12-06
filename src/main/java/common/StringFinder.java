@@ -6,18 +6,6 @@ import java.util.List;
 
 public class StringFinder {
 
-    public class StringMatch {
-        public final String stringMatched;
-        public final Integer endingIndex;
-
-        public final Integer startingIndex;
-        public StringMatch(String stringMatched, Integer startingIndex, Integer endingIndex) {
-            this.endingIndex = endingIndex;
-            this.stringMatched = stringMatched;
-            this.startingIndex = startingIndex;
-        }
-    }
-
     public List<StringMatch> getMatchedStrings(List<String> stringsToSearch, String stringToSearchFrom) {
         List<Integer> charIndexesToSearch = new ArrayList<>(Collections.nCopies(stringsToSearch.size(), 0));
         List<StringMatch> stringMatches = new ArrayList<>();
@@ -33,7 +21,7 @@ public class StringFinder {
                 if (c == stringToSearch.charAt(indexToLook)) {
                     indexToLook += 1;
                     if (indexToLook >= stringToSearch.length()) {
-                        StringMatch match = new StringMatch(stringToSearch, i - (stringToSearch.length()-1), i);
+                        StringMatch match = new StringMatch(stringToSearch, i - (stringToSearch.length() - 1), i);
                         stringMatches.add(match);
                         charIndexesToSearch.set(j, 0);
                     } else {

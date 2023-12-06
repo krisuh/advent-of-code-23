@@ -58,7 +58,7 @@ public class DayOne {
         StringFinder stringFinder = new StringFinder();
         var matches = stringFinder.getMatchedStrings(numberNames, input);
         var digits = matches.stream().map(
-                match -> numberNamesToDigit.getOrDefault(match.stringMatched, match.stringMatched)).toList();
+                match -> numberNamesToDigit.getOrDefault(match.stringMatched(), match.stringMatched())).toList();
         if (digits.isEmpty()) {
             return 0;
         }

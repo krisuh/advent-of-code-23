@@ -1,4 +1,5 @@
 import common.FileReaderUtil;
+import dayfour.DayFour;
 import dayone.DayOne;
 import daythree.DayThree;
 import daytwo.DayTwo;
@@ -27,5 +28,12 @@ public class App {
         System.out.println(dayThreeResult1);
         var dayThreeResult2 = DayThree.partTwo(input3);
         System.out.println(dayThreeResult2);
+        System.out.println("---- Day Four ----");
+        var input4 = fileReaderUtil.readFileToStringList("input4.txt");
+        var dayFourResult1 = DayFour.partOne(input4);
+        System.out.println(dayFourResult1);
+        var dayFourResult2 = DayFour.partTwo(input4);
+        System.out.println(dayFourResult2);
+
     }
 }
